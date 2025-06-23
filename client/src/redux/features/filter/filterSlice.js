@@ -6,11 +6,15 @@ const initialState = {
 };
 
 const filterSlice = createSlice({
-  name: "filter",
+  name: "blog",
   initialState,
   reducers: {
-    tagsSelected: (state, action) => {
-      state.tags = [action.payload];
+    tagSelected: (state, action) => {
+      if (state.tags.includes(action.payload)) {
+        state.tags = [];
+      } else {
+        state.tags = [action.payload];
+      }
     },
     searched: (state, action) => {
       state.search = action.payload;
@@ -19,4 +23,4 @@ const filterSlice = createSlice({
 });
 
 export default filterSlice.reducer;
-export const { tagsSelected, searched } = filterSlice.actions;
+export const { tagSelected, searched } = filterSlice.actions;

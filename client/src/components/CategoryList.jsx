@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { tagsSelected } from "../redux/features/filter/filterSlice";
+import { tagSelected } from "../redux/features/filter/filterSlice";
 
 const CategoryList = () => {
   const dispatch = useDispatch();
@@ -13,10 +13,13 @@ const CategoryList = () => {
         Popular Topics
       </h5>
       <ul>
-        <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
+        <li
+          className={`px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300 ${
+            isTagSelected("AI") ? "selected bg-indigo-300 rounded" : ""
+          }`}
+        >
           <a
-            href=""
-            onClick={() => dispatch(tagsSelected("AI"))}
+            onClick={() => dispatch(tagSelected("AI"))}
             className="flex items-center text-gray-600 cursor-pointer"
           >
             <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
@@ -25,10 +28,13 @@ const CategoryList = () => {
             <i className="text-gray-500 bx bx-right-arrow-alt ml-1"></i>
           </a>
         </li>
-        <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
+        <li
+          className={`px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300 ${
+            isTagSelected("Startups") ? "selected bg-indigo-300 rounded" : ""
+          }`}
+        >
           <a
-            href=""
-            onClick={() => dispatch(tagsSelected("Startups"))}
+            onClick={() => dispatch(tagSelected("Startups"))}
             className="flex items-center text-gray-600 cursor-pointer"
           >
             <span className="inline-block h-4 w-4 bg-indigo-300 mr-3"></span>
@@ -37,10 +43,13 @@ const CategoryList = () => {
             <i className="text-gray-500 bx bx-right-arrow-alt ml-1"></i>
           </a>
         </li>
-        <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
+        <li
+          className={`px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300  ${
+            isTagSelected("Security") ? "selected bg-indigo-300 rounded" : ""
+          }`}
+        >
           <a
-            href=""
-            onClick={() => dispatch(tagsSelected("Security"))}
+            onClick={() => dispatch(tagSelected("Security"))}
             className="flex items-center text-gray-600 cursor-pointer"
           >
             <span className="inline-block h-4 w-4 bg-yellow-300 mr-3"></span>
@@ -49,10 +58,13 @@ const CategoryList = () => {
             <i className="text-gray-500 bx bx-right-arrow-alt ml-1"></i>
           </a>
         </li>
-        <li className="px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300">
+        <li
+          className={`px-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300 ${
+            isTagSelected("Apps") ? "selected bg-indigo-300 rounded" : ""
+          }`}
+        >
           <a
-            href=""
-            onClick={() => dispatch(tagsSelected("Apps"))}
+            onClick={() => dispatch(tagSelected("Apps"))}
             className="flex items-center text-gray-600 cursor-pointer"
           >
             <span className="inline-block h-4 w-4 bg-blue-300 mr-3"></span>

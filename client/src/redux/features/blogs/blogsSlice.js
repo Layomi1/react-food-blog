@@ -24,7 +24,8 @@ const blogsSlice = createSlice({
     builder
       .addCase(fetchBlogs.pending, (state) => {
         state.isError = false;
-        (state.isLoading = true), (state.blogs = []);
+        state.isLoading = true;
+        state.blogs = [];
       })
       .addCase(fetchBlogs.fulfilled, (state, action) => {
         state.isLoading = false;

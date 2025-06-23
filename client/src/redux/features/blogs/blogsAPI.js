@@ -12,7 +12,7 @@ export const getBlogs = async (tags, search) => {
   }
   const url = queryString ? `/blogs/?${queryString}` : "/blogs";
   try {
-    const response = await publicAxios.get(`/blogs/?${queryString}`);
+    const response = await publicAxios.get(url);
     return response.data;
   } catch (error) {
     console.log(error);
