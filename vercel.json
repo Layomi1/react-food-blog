@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/db.json",
+      "use": "@/vercel/node"
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dist": "server/db.json" }]
+}

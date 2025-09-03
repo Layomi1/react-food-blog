@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Layomi1/react-food-blog.git"
+  },
+  "author": "Layomi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Layomi1/react-food-blog/issues"
+  },
+  "homepage": "https://github.com/Layomi1/react-food-blog#readme",
+  "description": ""
+}
