@@ -1,5 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import rootReducer from "./rootReducer";
+import blogsReducer from "./features/blogs/blogsSlice";
+import blogReducer from "./features/singleBlog/blogSlice";
+import filterReducer from "./features/filter/filterSlice";
 
 let middleware = [];
 
@@ -8,10 +10,12 @@ if (process.env.NODE_ENV === "development") {
   middleware.push(logger);
 }
 
-const store = configureStore({
-  reducer: rootReducer,
+export const store = configureStore({
+  reducer: {
+    blogs: blogsReducer,
+    blog: blogReducer,
+    filter: filterReducer,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(middleware),
 });
-
-export default store;
